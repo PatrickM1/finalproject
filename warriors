@@ -1,0 +1,59 @@
+/**
+ * @PatrickM 1/2/19.
+ * This program gives the parameters for a fighter in my game
+ */
+
+public class Warriors
+{
+    private String name;
+    private int attack;
+    
+    private int hp;
+    public Warriors()
+    {
+     name = "Basic Warrior";
+     attack = 50;
+     
+     hp = 150;
+    }
+    public Warriors(String n, int a, int l)
+    {
+      name = n;
+      attack = a;
+      hp = l;
+    }
+    public String getName()
+    {
+      return name;
+    }
+    public int getAttack()
+    {
+      return attack;
+    }
+   
+    public int getHp()
+    {
+      return hp;  
+    }
+    
+    public void setName(String otherWarrior)
+    {
+     
+     name = otherWarrior;
+            
+    }
+    public void setAttack(int otherAttack)
+    {
+     attack = otherAttack; 
+    }
+    public void setHp1(int otherHp)
+    {
+     hp = otherHp;  
+    }
+    public void setHp(int damage)
+    {
+     hp = hp - damage;
+    }
+     
+    
+}
