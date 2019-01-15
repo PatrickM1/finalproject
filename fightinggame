@@ -1,0 +1,291 @@
+/**
+ * @PatrickM 1/3/18.
+ * This uses my warriors class to make a game
+ */
+ import java.util.Scanner;
+public class warriorsproject
+{
+    public static void main(String[] args)
+    {Scanner in = new Scanner(System.in);
+     Warriors p1 = new Warriors();
+     Warriors p2 = new Warriors();
+     Warriors p3 = new Warriors();
+     Warriors p4 = new Warriors();
+     Warriors p5 = new Warriors();
+     battle(p1, p2, p3, p4, p5);
+     
+}
+ public static void battle(Warriors p1, Warriors p2, Warriors p3, Warriors p4, Warriors p5)
+ {
+     Scanner in = new Scanner(System.in);
+     System.out.println("Welcome to Warrior Fight!");
+
+     System.out.println("To pick Basic Warrior, press 1");
+     System.out.println("To pick Fire Warrior, press 2");
+     System.out.println("To pick Ground Warrior, press 3");
+     System.out.println("To pick Wind Warrior, press 4");
+     System.out.println("To pick Sea Warrior, press 5");
+     int warriorPlay = in.nextInt();
+     if (warriorPlay == 1)
+     {
+      p2.setName("Fire Warrior");
+      p2.setAttack(90);
+      p2.setHp1(120);
+      p3.setName("Ground Warrior");
+      p3.setAttack(40);
+      p3.setHp1(190);
+      p4.setName("Wind Warrior");
+      p4.setAttack(80);
+      p4.setHp1(110);
+      p5.setName("Sea Warrior");
+      p5.setAttack(60);
+      p5.setHp1(170);
+      
+     }
+     if (warriorPlay == 2)
+     {
+      p1.setName("Fire Warrior");
+      p1.setAttack(90);
+      p1.setHp1(120);
+      p2.setName("Wind Warrior");
+      p2.setAttack(80);
+      p2.setHp1(110);
+      p3.setName("Basic Warrior");
+      p3.setAttack(50);
+      p3.setHp1(150);
+      p4.setName("Sea Warrior");
+      p4.setAttack(70);
+      p4.setHp1(170);
+      p5.setName("Ground Warrior");
+      p5.setAttack(40);
+      p5.setHp1(190);
+      
+        }
+     if (warriorPlay == 3)
+     {
+       p1.setName("Ground Warrior");
+       p1.setAttack(40);
+       p1.setHp1(190);
+       p2.setName("Sea Warrior");
+       p2.setAttack(70);
+       p2.setHp1(170);
+       p3.setName("Fire Warrior");
+       p3.setAttack(90);
+       p3.setHp1(120);
+       p4.setName("Basic Warrior");
+       p4.setAttack(50);
+       p4.setHp1(150);
+       p5.setName("Wind Warrior");
+       p5.setAttack(80);
+       p5.setHp1(110);
+        }
+      if (warriorPlay == 4)
+      {
+       p1.setName("Wind Warrior");
+       p1.setAttack(80);
+       p1.setHp1(110);
+       p2.setName("Basic Warrior");
+       p2.setAttack(50);
+       p2.setHp1(150);
+       p3.setName("Sea Warrior");
+       p3.setAttack(60);
+       p3.setHp1(170);
+       p4.setName("Ground Warrior");
+       p4.setAttack(40);
+       p4.setHp1(190);
+       p5.setName("Fire Warrior");
+       p5.setAttack(90);
+       p5.setHp1(120);
+       
+        }
+      if (warriorPlay == 5)
+      {
+        p1.setName("Sea Warrior");
+        p1.setAttack(60);
+        p1.setHp1(170);
+        p2.setName("Ground Warrior");
+        p2.setAttack(40);
+        p2.setHp1(190);
+        p3.setName("Wind Warrior");
+        p3.setAttack(80);
+        p3.setHp1(110);
+        p4.setName("Fire Warrior");
+        p4.setAttack(90);
+        p4.setHp1(120);
+        p5.setName("Basic Warrior");
+        p5.setAttack(50);
+        p5.setHp1(150);
+        
+        }
+     System.out.println("You chose " + p1.getName() + ". Let's begin!");
+      for (int level = 1; level <= 4; level++)
+     {
+      System.out.println("Level " + level);
+      if (level == 1)
+      {
+        System.out.println(p1.getName() + " VS " + p2.getName());
+        
+        while (p1.getHp() > 0 && p2.getHp() > 0)
+        {
+            System.out.println("Press 1 to attack, 2 to defend");
+        int choose = in.nextInt();
+        int random = (int)(Math.random() * 2);
+        if (random == 1 && choose == 1)
+        {
+          p1.setHp(p2.getAttack());
+          p2.setHp(p1.getAttack());
+        }
+        else if (random == 2 && choose == 1)
+         p1.setHp(20);
+        else if (random == 1 && choose == 2)
+        p2.setHp(20);
+        else if (random == 2 && choose == 2)
+        {
+         p1.getHp();
+         p2.getHp();
+        }
+        System.out.println(p1.getName() + ": " + p1.getHp());
+        System.out.println(p2.getName() + ": " + p2.getHp());
+        if (p1.getHp() <= 0 && p2.getHp() > 0)
+        {
+        System.out.println("You Lose");
+        System.exit(0);
+    }
+        else if (p1.getHp() > 0 && p2.getHp() <= 0)
+        System.out.println("You Win");
+      else if (p1.getHp() <= 0 && p2.getHp() <= 0)
+      {
+        System.out.println("Draw");
+        System.exit(0);
+    }
+        }
+        
+        }
+      if (level == 2)
+      {
+        System.out.println(p1.getName() + " VS " + p3.getName());
+        
+        while (p1.getHp() > 0 && p3.getHp() > 0)
+        {
+         System.out.println("Press 1 to attack, 2 to defend");
+        int choose = in.nextInt();
+        int random = (int)(Math.random() * 2);
+        if (random == 1 && choose == 1)
+        {
+          p1.setHp(p3.getAttack());
+          p3.setHp(p1.getAttack());
+        }
+        else if (random == 2 && choose == 1)
+         p1.setHp(20);
+        else if (random == 1 && choose == 2)
+        p3.setHp(20);
+        else if (random == 2 && choose == 2)
+        {
+         p1.getHp();
+         p3.getHp();
+        }
+        System.out.println(p1.getName() + ": " + p1.getHp());
+        System.out.println(p3.getName() + ": " + p3.getHp());
+        if (p1.getHp() <= 0 && p3.getHp() > 0)
+        {
+        System.out.println("You Lose");
+        System.exit(0);
+    }
+        else if (p1.getHp() > 0 && p3.getHp() <= 0)
+        System.out.println("You Win");
+        else  if  (p1.getHp() <= 0 && p3.getHp() <= 0)
+        {
+         System.out.println("Draw");
+         System.exit(0);
+        }
+        }
+        
+    }
+      if (level == 3)
+      {
+        System.out.println(p1.getName() + " VS " + p4.getName());
+   
+        while (p1.getHp() > 0 && p4.getHp() > 0)
+        {
+        System.out.println("Press 1 to attack, 2 to defend");
+        int choose = in.nextInt();
+        int random = (int)(Math.random() * 2);
+        if (random == 1 && choose == 1)
+        {
+          p1.setHp(p4.getAttack());
+          p4.setHp(p1.getAttack());
+        }
+        else if (random == 2 && choose == 1)
+         p1.setHp(20);
+        else if (random == 1 && choose == 2)
+        p4.setHp(20);
+        else if (random == 2 && choose == 2)
+        {
+         p1.getHp();
+         p4.getHp();
+        }
+        System.out.println(p1.getName() + ": " + p1.getHp());
+        System.out.println(p4.getName() + ": " + p4.getHp());
+        if (p1.getHp() <= 0 && p4.getHp() > 0)
+    {
+        System.out.println("You Lose");
+        System.exit(0);
+    }
+      else if (p1.getHp() > 0 && p4.getHp() <= 0)
+        System.out.println("You Win");
+      else if (p1.getHp() <= 0 && p4.getHp() <= 0)
+      {
+        System.out.println("Draw");
+        System.exit(0);
+        }
+    }
+    
+        }
+      if (level == 4)
+      {
+       System.out.println(p1.getName() + " VS " + p5.getName());  
+       
+        while (p1.getHp() > 0 && p5.getHp() > 0)
+        {
+        System.out.println("Press 1 to attack, 2 to defend");
+        int choose = in.nextInt();
+        int random = (int)(Math.random() * 2);
+        
+        if (random == 1 && choose == 1)
+        {
+          p1.setHp(p5.getAttack());
+          p5.setHp(p1.getAttack());
+        }
+        else if (random == 2 && choose == 1)
+         p1.setHp(20);
+        else if (random == 1 && choose == 2)
+        p5.setHp(20);
+        else if (random == 2 && choose == 2)
+        {
+         p1.getHp();
+         p5.getHp();
+        }
+        System.out.println(p1.getName() + ": " + p1.getHp());
+        System.out.println(p5.getName() + ": " + p5.getHp());
+        if  (p1.getHp() <= 0 && p5.getHp() > 0)
+        {
+        System.out.println("You Lose");
+        System.exit(0);
+        }
+        else if (p1.getHp() > 0 && p5.getHp() <= 0)
+           System.out.println("You Win");
+        else if (p1.getHp() <= 0 && p5.getHp() <= 0)
+        {
+         System.out.println("Draw");
+         System.exit(0);
+        }
+      }
+     
+    }
+    
+    System.out.print('\u000C');
+
+    }
+    System.out.println("You are the victor! Congratulations!");
+}
+}
